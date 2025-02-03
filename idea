@@ -1,0 +1,18 @@
+`
+                              <h2 property="name" id="wb-cont">${value.title}</h2>
+                                    <h3 class="mrgn-tp-0">${value.category}</h3>
+                                    h3>${value.datePublished}</h3>
+                              <div class="clearfix"></div>
+                                    <table class="table table-bordered table-striped">
+                                <tbody>
+                                
+                                    <tr><th>Audience</th><td>${value.audience || ''}</td></tr>
+                                    <tr><th>What You Need to Know</th><td>${value.whatYouNeedToKnow || ''}</td></tr>
+                                    <tr><th>Action Required</th><td>${value.actionRequired || ''}</td></tr>
+                                    <tr><th>Notes</th><td>${value.notes || ''}</td></tr>
+                                    <tr><th>Resources</th><td>${value.resources ? `<a href="${value.resources}">${value.resources}</a>` : ''}</td></tr>
+                                    <tr><th>Who to Contact</th><td>${value.whoToContact ? `<a href="${value.whoToContact}">${value.whoToContact}</a>` : ''}</td></tr>
+                                    <tr><th>Shareable Link</th><td>${value.shareableLink ? `<a href="${value.shareableLink}">Share this link</a>` : ''}</td></tr>
+                                </tbody>
+                            </table>
+                        `;
