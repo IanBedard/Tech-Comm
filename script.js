@@ -12,6 +12,12 @@ $(document).ready(function() {
                 $categorySelect.append(`<option value="${key}">${value.title} (${value.datePublished})</option>`);
             });
 
+            // Initialize Select2 on the category dropdown
+            $categorySelect.select2({
+                placeholder: "Select a category",
+                allowClear: true
+            });
+
             // Create a list of available dates
             var availableDates = [];
             $.each(jsonData, function(key, value) {
@@ -25,11 +31,7 @@ $(document).ready(function() {
                 dateFormat: 'yy-mm-dd',
                 beforeShowDay: function(date) {
                     var dateString = $.datepicker.formatDate('yy-mm-dd', date);
-                    if (availableDates.includes(dateString)) {
-                        return [true, '']; // Available dates can be selected
-                    } else {
-                        return [false, '']; // Disabled dates
-                    }
+                    return [availableDates.includes(dateString), ''];
                 }
             });
 
@@ -49,7 +51,6 @@ $(document).ready(function() {
                                     <p><strong>Date Published:</strong> ${value.datePublished}</p>
                             `;
 
-                            // Add additional fields if they are not empty
                             if (value.audience) {
                                 resultHtml += `<p><strong>Audience:</strong> ${value.audience}</p>`;
                             }
@@ -71,28 +72,23 @@ $(document).ready(function() {
                             if (value.shareableLink) {
                                 resultHtml += `<p><strong>Shareable Link:</strong> <a href="${value.shareableLink}">Share this link</a></p>`;
                             }
-                            // Close the entry div
                             resultHtml += `</div><hr>`;
                         }
                     });
 
-                    // If no data was found for the selected date
                     if (resultHtml === '') {
                         resultHtml = "<h2 class='text-danger text-center'>No Data Available for the selected date.</h2>";
                     }
 
-                    // Update result content
                     $("#result").html(resultHtml);
                 }
             });
 
             // Function to load specific entry from the URL
             function loadEntryFromURL() {
-                // Extract the 'entry' parameter from the URL query string
                 var entryID = new URLSearchParams(window.location.search).get('entry');
                 
                 if (entryID) {
-                    // Clean the entry ID (if necessary, to match with your data format)
                     if (jsonData[entryID]) {
                         var value = jsonData[entryID];
                         var resultHtml = `
@@ -102,7 +98,6 @@ $(document).ready(function() {
                                 <p><strong>Date Published:</strong> ${value.datePublished}</p>
                         `;
 
-                        // Add additional fields if they are not empty
                         if (value.audience) {
                             resultHtml += `<p><strong>Audience:</strong> ${value.audience}</p>`;
                         }
@@ -124,22 +119,17 @@ $(document).ready(function() {
                         if (value.shareableLink) {
                             resultHtml += `<p><strong>Shareable Link:</strong> <a href="${value.shareableLink}">Share this link</a></p>`;
                         }
-                        // Close the entry div
                         resultHtml += `</div>`;
 
-                        // Update result content
                         $("#result").html(resultHtml);
                     } else {
-                        // If no entry found, show a message
                         $("#result").html("<h2 class='text-danger text-center'>No Data Available for the selected entry.</h2>");
                     }
                 } else {
-                    // If no entry query parameter exists, show a message
                     $("#result").html("<h2 class='text-danger text-center'>No valid entry ID provided.</h2>");
                 }
             }
 
-            // Call the function to load data based on the query string entry parameter
             loadEntryFromURL();
             
         })
@@ -161,7 +151,6 @@ $(document).ready(function() {
                     <p><strong>Date Published:</strong> ${data.datePublished}</p>
                 `;
 
-                // Add additional fields if they are not empty
                 if (data.audience) {
                     resultHtml += `<p><strong>Audience:</strong> ${data.audience}</p>`;
                 }
@@ -184,7 +173,6 @@ $(document).ready(function() {
                     resultHtml += `<p><strong>Shareable Link:</strong> <a href="${data.shareableLink}">Share this link</a></p>`;
                 }
 
-                // Update result content
                 $("#result").html(resultHtml);
             } else {
                 $("#result").html("<h2 class='text-danger text-center'>No Data Available for the selected category.</h2>");
