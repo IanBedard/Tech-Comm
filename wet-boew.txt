@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech-Comm Demo</title>
+    <!-- WET-BOEW CSS -->
+    <link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/css/theme.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- WET-BOEW JavaScript -->
+    <script src="https://wet-boew.github.io/themes-dist/GCWeb/js/theme.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body class="bg-light">
+
+    <div class="container mt-4">
+        <h1 class="mb-4 text-center">Tech-Comm Demo</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="wb-cards">
+                    <div class="card">
+                        <div class="card-body">
+                            <label for="datePicker" class="form-label">Find through dates: </label>
+                            <div class="input-group">
+                                <input type="text" id="datePicker" class="form-control" placeholder="Select a date">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="wb-cards">
+                    <div class="card">
+                        <div class="card-body">
+                            <label for="category" class="form-label">Find a specific Technical Communication: </label>
+                            <div class="input-group">
+                                <select id="category" class="form-control"></select>
+                                <button id="fetchData" class="btn btn-primary">Load Content</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="result" class="mt-4 p-4 bg-white shadow rounded">
+            <h2 class="text-muted text-center">Content will appear here...</h2>
+        </div>
+
+        <!-- New JSON Example Section -->
+        <div class="wb-cards mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Example of JSON Data Structure:</h3>
+                    <pre class="bg-dark text-white p-3 rounded">
+{
+    "2025-02-08": {
+        "title": "Lorem ipsum dolor sit amet 8",
+        "category": "Lorem ipsum 8",
+        "datePublished": "2025-02-08",
+        "audience": "Lorem ipsum teams",
+        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
+        "actionRequired": "Lorem ipsum dolor sit amet.",
+        "notes": "Lorem ipsum dolor sit amet.",
+        "resources": "https://example.com/resources8",
+        "whoToContact": "https://example.com/support",
+        "shareableLink": "?entry=2025-02-08"
+    },
+    "2025-02-09-1": {
+        "title": "Lorem ipsum dolor sit amet 9 1",
+        "category": "Lorem ipsum 9 1",
+        "datePublished": "2025-02-09",
+        "audience": "Lorem ipsum teams",
+        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
+        "actionRequired": "Lorem ipsum dolor sit amet.",
+        "notes": "Lorem ipsum dolor sit amet.",
+        "resources": "https://example.com/resources9",
+        "whoToContact": "https://example.com/support",
+        "shareableLink": "?entry=2025-02-09-1"
+    }
+}
+                    </pre>
+                    <div>
+                        <h3>How the Shareable Links Work:</h3>
+                        <p>In this system, each Tech-Comm update or action item is assigned a unique identifier (e.g., 2025-02-09-1). This identifier is included in the URL as a query string (e.g., index.html?entry=2025-02-09-1). When a user clicks on a shareable link, such as index.html?entry=2025-02-09-1, the JavaScript on the page extracts the identifier from the URL and uses it to retrieve the corresponding data from the JSON file.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
