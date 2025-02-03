@@ -70,124 +70,272 @@
       "title": "Share this link"
     }
   },
+  
     "2025-02-02": {
-      "title": "Lorem ipsum dolor sit amet 2",
-      "category": "Lorem ipsum 2",
+      "title": "Update on project timelines and deliverables for Q1",
+      "category": "Project Update",
       "datePublished": "2025-02-02",
-      "audience": "Lorem ipsum teams",
-      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-      "actionRequired": "Lorem ipsum dolor sit amet.",
-      "notes": "Lorem ipsum dolor sit amet.",
-      "resources": "https://example.com/resources2",
-      "whoToContact": "https://example.com/support",
-      "shareableLink": "?entry=2025-02-02"
+      "audience": [
+        "Project managers",
+        "Team leads",
+        "Stakeholders"
+      ],
+      "whatYouNeedToKnow": [
+        "The project timelines have been adjusted to accommodate new deliverables.",
+        "Key changes include:",
+        {
+          "details": [
+            "The deadline for initial drafts is now February 15, 2025.",
+            "Final reviews will be conducted by March 1, 2025."
+          ]
+        }
+      ],
+      "actionRequired": [
+        "Review the updated project plan.",
+        {
+          "details": [
+            "Ensure all team members are informed of the new deadlines.",
+            "Adjust resource allocation as necessary."
+          ]
+        }
+      ],
+      "notes": [
+        "These changes are critical to meet client expectations.",
+        {
+          "details": [
+            "Further adjustments may be required based on feedback.",
+            "Regular updates will be provided."
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "href": "https://example.com/project-plan",
+          "title": "Updated Project Plan"
+        }
+      ],
+      "whoToContact": [
+        {
+          "href": "https://example.com/contact-pm",
+          "title": "Project Management Office"
+        }
+      ],
+      "shareableLink": {
+        "href": "?entry=2025-02-02",
+        "title": "Share this link"
+      }
     },
     "2025-02-03": {
-      "title": "Lorem ipsum dolor sit amet 3",
-      "category": "Lorem ipsum 3",
+      "title": "Policy changes regarding remote work arrangements",
+      "category": "Policy Update",
       "datePublished": "2025-02-03",
-      "audience": "Lorem ipsum teams",
-      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-      "actionRequired": "Lorem ipsum dolor sit amet.",
-      "notes": "Lorem ipsum dolor sit amet.",
-      "resources": "https://example.com/resources3",
-      "whoToContact": "https://example.com/support",
-      "shareableLink": "?entry=2025-02-03"
+      "audience": [
+        "All employees",
+        "HR managers"
+      ],
+      "whatYouNeedToKnow": [
+        "New policies have been implemented for remote work.",
+        "Highlights include:",
+        {
+          "details": [
+            "Employees are required to log in by 9:00 am daily.",
+            "Weekly check-ins with managers are mandatory."
+          ]
+        }
+      ],
+      "actionRequired": [
+        "Familiarize yourself with the new policy document.",
+        {
+          "details": [
+            "Submit any concerns to HR by February 10, 2025.",
+            "Ensure compliance with the new guidelines."
+          ]
+        }
+      ],
+      "notes": [
+        "These policies aim to enhance productivity.",
+        {
+          "details": [
+            "Feedback will be collected after the first quarter.",
+            "Adjustments will be made as necessary."
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "href": "https://example.com/remote-work-policy",
+          "title": "Remote Work Policy Document"
+        }
+      ],
+      "whoToContact": [
+        {
+          "href": "https://example.com/contact-hr",
+          "title": "Human Resources"
+        }
+      ],
+      "shareableLink": {
+        "href": "?entry=2025-02-03",
+        "title": "Share this link"
+      }
     },
     "2025-02-04": {
-      "title": "Lorem ipsum dolor sit amet 4",
-      "category": "Lorem ipsum 4",
+      "title": "Training schedule for new software implementation",
+      "category": "Training",
       "datePublished": "2025-02-04",
-      "audience": "Lorem ipsum teams",
-      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-      "actionRequired": "Lorem ipsum dolor sit amet.",
-      "notes": "Lorem ipsum dolor sit amet.",
-      "resources": "https://example.com/resources4",
-      "whoToContact": "https://example.com/support",
-      "shareableLink": "?entry=2025-02-04"
+      "audience": [
+        "IT staff",
+        "Department heads"
+      ],
+      "whatYouNeedToKnow": [
+        "Training sessions for the new software will begin next week.",
+        "Key details:",
+        {
+          "details": [
+            "Sessions will be held every Tuesday and Thursday.",
+            "Attendance is mandatory for all IT staff."
+          ]
+        }
+      ],
+      "actionRequired": [
+        "Register for the training sessions.",
+        {
+          "details": [
+            "Complete the pre-training assessment by February 5, 2025.",
+            "Bring your own device to the sessions."
+          ]
+        }
+      ],
+      "notes": [
+        "This training is essential for the upcoming software rollout.",
+        {
+          "details": [
+            "Additional resources will be provided during the sessions.",
+            "Follow-up sessions will be scheduled as needed."
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "href": "https://example.com/training-schedule",
+          "title": "Training Schedule"
+        }
+      ],
+      "whoToContact": [
+        {
+          "href": "https://example.com/contact-it",
+          "title": "IT Support"
+        }
+      ],
+      "shareableLink": {
+        "href": "?entry=2025-02-04",
+        "title": "Share this link"
+      }
     },
     "2025-02-05": {
-      "title": "Lorem ipsum dolor sit amet 5",
-      "category": "Lorem ipsum 5",
+      "title": "Annual performance review process and deadlines",
+      "category": "HR Announcement",
       "datePublished": "2025-02-05",
-      "audience": "Lorem ipsum teams",
-      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-      "actionRequired": "Lorem ipsum dolor sit amet.",
-      "notes": "Lorem ipsum dolor sit amet.",
-      "resources": "https://example.com/resources5",
-      "whoToContact": "https://example.com/support",
-      "shareableLink": "?entry=2025-02-05"
+      "audience": [
+        "All employees",
+        "Managers"
+      ],
+      "whatYouNeedToKnow": [
+        "The annual performance review process is now underway.",
+        "Important dates:",
+        {
+          "details": [
+            "Self-assessments are due by February 20, 2025.",
+            "Manager reviews must be completed by March 5, 2025."
+          ]
+        }
+      ],
+      "actionRequired": [
+        "Complete your self-assessment form.",
+        {
+          "details": [
+            "Schedule a review meeting with your manager.",
+            "Submit any supporting documents by the deadline."
+          ]
+        }
+      ],
+      "notes": [
+        "This process is crucial for career development.",
+        {
+          "details": [
+            "Ensure all feedback is constructive and actionable.",
+            "Use the provided templates for consistency."
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "href": "https://example.com/performance-review-guide",
+          "title": "Performance Review Guide"
+        }
+      ],
+      "whoToContact": [
+        {
+          "href": "https://example.com/contact-hr",
+          "title": "HR Department"
+        }
+      ],
+      "shareableLink": {
+        "href": "?entry=2025-02-05",
+        "title": "Share this link"
+      }
     },
     "2025-02-06": {
-      "title": "Lorem ipsum dolor sit amet 6",
-      "category": "Lorem ipsum 6",
+      "title": "Security update: New protocols for data protection",
+      "category": "Security Alert",
       "datePublished": "2025-02-06",
-      "audience": "Lorem ipsum teams",
-      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-      "actionRequired": "Lorem ipsum dolor sit amet.",
-      "notes": "Lorem ipsum dolor sit amet.",
-      "resources": "https://example.com/resources6",
-      "whoToContact": "https://example.com/support",
-      "shareableLink": "?entry=2025-02-06"
-    },
-    "2025-02-07": {
-      "title": "Lorem ipsum dolor sit amet 7",
-      "category": "Lorem ipsum 7",
-      "datePublished": "2025-02-07",
-      "audience": "Lorem ipsum teams",
-      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-      "actionRequired": "Lorem ipsum dolor sit amet.",
-      "notes": "Lorem ipsum dolor sit amet.",
-      "resources": "https://example.com/resources7",
-      "whoToContact": "https://example.com/support",
-      "shareableLink": "?entry=2025-02-07"
-    },
-    "2025-02-08": {
-      "title": "Lorem ipsum dolor sit amet 8",
-      "category": "Lorem ipsum 8",
-      "datePublished": "2025-02-08",
-      "audience": "Lorem ipsum teams",
-      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-      "actionRequired": "Lorem ipsum dolor sit amet.",
-      "notes": "Lorem ipsum dolor sit amet.",
-      "resources": "https://example.com/resources8",
-      "whoToContact": "https://example.com/support",
-      "shareableLink": "?entry=2025-02-08"
-    },
-    "2025-02-09-1": {
-      "title": "Lorem ipsum dolor sit amet 9 1",
-      "category": "Lorem ipsum 9 1",
-      "datePublished": "2025-02-09",
-      "audience": "Lorem ipsum teams",
-      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-      "actionRequired": "Lorem ipsum dolor sit amet.",
-      "notes": "Lorem ipsum dolor sit amet.",
-      "resources": "https://example.com/resources9",
-      "whoToContact": "https://example.com/support",
-      "shareableLink": "?entry=2025-02-09-1"
-    },
-    "2025-02-09-2": {
-      "title": "Lorem ipsum dolor sit amet 9 2",
-      "category": "Lorem ipsum 9 2",
-      "datePublished": "2025-02-09",
-      "audience": "Lorem ipsum teams",
-      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-      "actionRequired": "Lorem ipsum dolor sit amet.",
-      "notes": "Lorem ipsum dolor sit amet.",
-      "resources": "https://example.com/resources9",
-      "whoToContact": "https://example.com/support",
-      "shareableLink": "?entry=2025-02-09-2"
-    },
-    "2025-02-10": {
-      "title": "Lorem ipsum dolor sit amet 10",
-      "category": "Lorem ipsum 10",
-      "datePublished": "2025-02-10",
-      "audience": "Lorem ipsum teams",
-      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-      "actionRequired": "Lorem ipsum dolor sit amet.",
-      "notes": "Lorem ipsum dolor sit amet.",
-      "resources": "https://example.com/resources10",
-      "whoToContact": "https://example.com/support",
-      "shareableLink": "?entry=2025-02-10"
+      "audience": [
+        "All employees",
+        "IT security team"
+      ],
+      "whatYouNeedToKnow": [
+        "New security protocols have been implemented to protect data.",
+        "Key measures include:",
+        {
+          "details": [
+            "Two-factor authentication is now mandatory.",
+            "Regular password updates are required every 90 days."
+          ]
+        }
+      ],
+      "actionRequired": [
+        "Update your passwords immediately.",
+        {
+          "details": [
+            "Enable two-factor authentication on all accounts.",
+            "Report any suspicious activity to IT security."
+          ]
+        }
+      ],
+      "notes": [
+        "These measures are critical to safeguard company data.",
+        {
+          "details": [
+            "Training sessions on data protection will be scheduled.",
+            "Compliance is mandatory for all employees."
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "href": "https://example.com/security-protocols",
+          "title": "Security Protocols Document"
+        }
+      ],
+      "whoToContact": [
+        {
+          "href": "https://example.com/contact-security",
+          "title": "IT Security Team"
+        }
+      ],
+      "shareableLink": {
+        "href": "?entry=2025-02-06",
+        "title": "Share this link"
+      }
     }
   }
+  
