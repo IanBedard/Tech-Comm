@@ -26,9 +26,12 @@ $(document).ready(function() {
                 }
             });
 
-            // Initialize the DatePicker
+            // Initialize the DatePicker with year selection
             $("#datePicker").datepicker({
                 dateFormat: 'yy-mm-dd',
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "2000:2030", // Adjust the range as needed
                 beforeShowDay: function(date) {
                     var dateString = $.datepicker.formatDate('yy-mm-dd', date);
                     return [availableDates.includes(dateString), ''];
