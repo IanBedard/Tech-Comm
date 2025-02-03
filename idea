@@ -1,18 +1,43 @@
-`
-                              <h2 property="name" id="wb-cont">${value.title}</h2>
-                                    <h3 class="mrgn-tp-0">${value.category}</h3>
-                                    h3>${value.datePublished}</h3>
-                              <div class="clearfix"></div>
-                                    <table class="table table-bordered table-striped">
-                                <tbody>
-                                
-                                    <tr><th>Audience</th><td>${value.audience || ''}</td></tr>
-                                    <tr><th>What You Need to Know</th><td>${value.whatYouNeedToKnow || ''}</td></tr>
-                                    <tr><th>Action Required</th><td>${value.actionRequired || ''}</td></tr>
-                                    <tr><th>Notes</th><td>${value.notes || ''}</td></tr>
-                                    <tr><th>Resources</th><td>${value.resources ? `<a href="${value.resources}">${value.resources}</a>` : ''}</td></tr>
-                                    <tr><th>Who to Contact</th><td>${value.whoToContact ? `<a href="${value.whoToContact}">${value.whoToContact}</a>` : ''}</td></tr>
-                                    <tr><th>Shareable Link</th><td>${value.shareableLink ? `<a href="${value.shareableLink}">Share this link</a>` : ''}</td></tr>
-                                </tbody>
-                            </table>
-                        `;
+ <h2 property="name" id="wb-cont">Extension to basic pay and leave without pay transactions in Time and Labour for pay period 2</h1>
+	<h3 class="mrgn-tp-0">For information - January 17, 2025</h3>
+    
+    <div class="clearfix"></div>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th>Audience</th>
+			<td>
+				<strong>Change agents</strong><br>
+				<strong>Compensation advisors (CAs)</strong><br>
+				<strong>Section 33 authorizers</strong><br>
+				<strong>Section 34 managers</strong>
+			</td>
+        </tr>
+		  <tr>
+			  <th>What you need to know</th>
+			  <td>
+				  <ul>
+					  <li>Public Services and Procurement Canada (PSPC) would like to inform the community that there will be an extension to the approval of basic pay (or equivalent) and leave without pay (LWOP) transactions in Time and Labour. </li>
+					  <li>The following changes have been made to the transactions for pay period 2:
+					  	<ul>
+							<li>The cut-off for <strong>Section 34 managers approval</strong> will be 12:00 pm (<abbr title="eastern time">ET</abbr>) on Wednesday, January 22, 2025.</li>
+							<li>The cut-off for <strong>Section 33 authorization</strong> will be 4:00 pm (<abbr title="eastern time">ET</abbr>) on  Wednesday, January 22, 2025.</li>
+						</ul>
+					  </li>
+				  </ul>
+			  </td>
+		  </tr>
+		  <tr>
+			  <th>Resources</th>
+			  <td>
+				  <p>Refer to the <a href="https://gcintranet.tpsgc-pwgsc.gc.ca/remuneration-compensation/calendrier-schedule/2025-eng.html">Pay processing schedule – Year 2025</a> for detailed information about all pay-related processes and dates.</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <th>Who to contact</th>
+			  <td>
+				  <p><a href="https://gcintranet.tpsgc-pwgsc.gc.ca/remuneration-compensation/soutien-support-eng.html">Who to contact for pay system support</a></p>
+			  </td>
+		  </tr>
+      </tbody>
+    </table>
