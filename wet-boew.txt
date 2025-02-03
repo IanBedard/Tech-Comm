@@ -23,7 +23,7 @@
                         <div class="card-body">
                             <label for="datePicker" class="form-label">Find through dates: </label>
                             <div class="input-group">
-                                <input type="text" id="datePicker" class="form-control" placeholder="Select a date">
+                                <input type="text" id="datePicker" class="form-control wb-date" placeholder="Select a date" data-wb5-plugin="datepicker">
                             </div>
                         </div>
                     </div>
