@@ -1,134 +1,193 @@
 {
-    "2025-02-01": {
-        "title": "Lorem ipsum dolor sit amet 1",
-        "category": "Lorem ipsum 1",
-        "datePublished": "2025-02-01",
-        "audience": "Lorem ipsum teams",
-        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-        "actionRequired": "Lorem ipsum dolor sit amet.",
-        "notes": "N/A",
-        "resources": "https://example.com/resources",
-        "whoToContact": "https://example.com/support",
-        "shareableLink": "?entry=2025-02-01"
-    },
+   "2025-02-01": {
+    "title": "Extension to basic pay and leave without pay transactions in Time and Labour for pay period 2",
+    "category": "For information",
+    "datePublished": "2025-02-01",
+    "audience": [
+      "Change agents",
+      "Compensation advisors (CAs)",
+      "Section 33 authorizers",
+      "Section 34 managers"
+    ],
+    "whatYouNeedToKnow": [
+      "Public Services and Procurement Canada (PSPC) would like to inform the community that there will be an extension to the approval of basic pay (or equivalent) and leave without pay (LWOP) transactions in Time and Labour.",
+      "The following changes have been made to the transactions for pay period 2:",
+      {
+        "details": [
+          "The cut-off for Section 34 managers approval will be 12:00 pm (ET) on Wednesday, January 22, 2025.",
+          "The cut-off for Section 33 authorization will be 4:00 pm (ET) on Wednesday, January 22, 2025."
+        ]
+      }
+    ],
+    "actionRequired": [
+      "Ensure all approvals are completed by the specified deadlines.",
+      {
+        "details": [
+          "Communicate any issues to the relevant department.",
+          "Verify all entries before submission."
+        ]
+      }
+    ],
+    "notes": [
+      "This extension is a temporary measure.",
+      {
+        "details": [
+          "Further updates will be provided as necessary.",
+          "Check the internal portal for more information."
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "href": "https://gcintranet.tpsgc-pwgsc.gc.ca/remuneration-compensation/calendrier-schedule/2025-eng.html",
+        "title": "Pay processing schedule – Year 2025"
+      },
+      {
+        "details": [
+          {
+            "href": "https://example.com/resource2",
+            "title": "Additional Resource 2"
+          }
+        ]
+      }
+    ],
+    "whoToContact": [
+      {
+        "href": "https://gcintranet.tpsgc-pwgsc.gc.ca/remuneration-compensation/soutien-support-eng.html",
+        "title": "Who to contact for pay system support"
+      },
+      {
+        "details": [
+          {
+            "href": "https://example.com/contact2",
+            "title": "Secondary Contact"
+          }
+        ]
+      }
+    ],
+    "shareableLink": {
+      "href": "?entry=2025-02-01",
+      "title": "Share this link"
+    }
+  },
     "2025-02-02": {
-        "title": "Lorem ipsum dolor sit amet 2",
-        "category": "Lorem ipsum 2",
-        "datePublished": "2025-02-02",
-        "audience": "Lorem ipsum teams",
-        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-        "actionRequired": "Lorem ipsum dolor sit amet.",
-        "notes": "Lorem ipsum dolor sit amet.",
-        "resources": "https://example.com/resources2",
-        "whoToContact": "https://example.com/support",
-        "shareableLink": "?entry=2025-02-02"
+      "title": "Lorem ipsum dolor sit amet 2",
+      "category": "Lorem ipsum 2",
+      "datePublished": "2025-02-02",
+      "audience": "Lorem ipsum teams",
+      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
+      "actionRequired": "Lorem ipsum dolor sit amet.",
+      "notes": "Lorem ipsum dolor sit amet.",
+      "resources": "https://example.com/resources2",
+      "whoToContact": "https://example.com/support",
+      "shareableLink": "?entry=2025-02-02"
     },
     "2025-02-03": {
-        "title": "Lorem ipsum dolor sit amet 3",
-        "category": "Lorem ipsum 3",
-        "datePublished": "2025-02-03",
-        "audience": "Lorem ipsum teams",
-        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-        "actionRequired": "Lorem ipsum dolor sit amet.",
-        "notes": "Lorem ipsum dolor sit amet.",
-        "resources": "https://example.com/resources3",
-        "whoToContact": "https://example.com/support",
-        "shareableLink": "?entry=2025-02-03"
+      "title": "Lorem ipsum dolor sit amet 3",
+      "category": "Lorem ipsum 3",
+      "datePublished": "2025-02-03",
+      "audience": "Lorem ipsum teams",
+      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
+      "actionRequired": "Lorem ipsum dolor sit amet.",
+      "notes": "Lorem ipsum dolor sit amet.",
+      "resources": "https://example.com/resources3",
+      "whoToContact": "https://example.com/support",
+      "shareableLink": "?entry=2025-02-03"
     },
     "2025-02-04": {
-        "title": "Lorem ipsum dolor sit amet 4",
-        "category": "Lorem ipsum 4",
-        "datePublished": "2025-02-04",
-        "audience": "Lorem ipsum teams",
-        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-        "actionRequired": "Lorem ipsum dolor sit amet.",
-        "notes": "Lorem ipsum dolor sit amet.",
-        "resources": "https://example.com/resources4",
-        "whoToContact": "https://example.com/support",
-        "shareableLink": "?entry=2025-02-04"
+      "title": "Lorem ipsum dolor sit amet 4",
+      "category": "Lorem ipsum 4",
+      "datePublished": "2025-02-04",
+      "audience": "Lorem ipsum teams",
+      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
+      "actionRequired": "Lorem ipsum dolor sit amet.",
+      "notes": "Lorem ipsum dolor sit amet.",
+      "resources": "https://example.com/resources4",
+      "whoToContact": "https://example.com/support",
+      "shareableLink": "?entry=2025-02-04"
     },
     "2025-02-05": {
-        "title": "Lorem ipsum dolor sit amet 5",
-        "category": "Lorem ipsum 5",
-        "datePublished": "2025-02-05",
-        "audience": "Lorem ipsum teams",
-        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-        "actionRequired": "Lorem ipsum dolor sit amet.",
-        "notes": "Lorem ipsum dolor sit amet.",
-        "resources": "https://example.com/resources5",
-        "whoToContact": "https://example.com/support",
-        "shareableLink": "?entry=2025-02-05"
+      "title": "Lorem ipsum dolor sit amet 5",
+      "category": "Lorem ipsum 5",
+      "datePublished": "2025-02-05",
+      "audience": "Lorem ipsum teams",
+      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
+      "actionRequired": "Lorem ipsum dolor sit amet.",
+      "notes": "Lorem ipsum dolor sit amet.",
+      "resources": "https://example.com/resources5",
+      "whoToContact": "https://example.com/support",
+      "shareableLink": "?entry=2025-02-05"
     },
     "2025-02-06": {
-        "title": "Lorem ipsum dolor sit amet 6",
-        "category": "Lorem ipsum 6",
-        "datePublished": "2025-02-06",
-        "audience": "Lorem ipsum teams",
-        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-        "actionRequired": "Lorem ipsum dolor sit amet.",
-        "notes": "Lorem ipsum dolor sit amet.",
-        "resources": "https://example.com/resources6",
-        "whoToContact": "https://example.com/support",
-        "shareableLink": "?entry=2025-02-06"
+      "title": "Lorem ipsum dolor sit amet 6",
+      "category": "Lorem ipsum 6",
+      "datePublished": "2025-02-06",
+      "audience": "Lorem ipsum teams",
+      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
+      "actionRequired": "Lorem ipsum dolor sit amet.",
+      "notes": "Lorem ipsum dolor sit amet.",
+      "resources": "https://example.com/resources6",
+      "whoToContact": "https://example.com/support",
+      "shareableLink": "?entry=2025-02-06"
     },
     "2025-02-07": {
-        "title": "Lorem ipsum dolor sit amet 7",
-        "category": "Lorem ipsum 7",
-        "datePublished": "2025-02-07",
-        "audience": "Lorem ipsum teams",
-        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-        "actionRequired": "Lorem ipsum dolor sit amet.",
-        "notes": "Lorem ipsum dolor sit amet.",
-        "resources": "https://example.com/resources7",
-        "whoToContact": "https://example.com/support",
-        "shareableLink": "?entry=2025-02-07"
+      "title": "Lorem ipsum dolor sit amet 7",
+      "category": "Lorem ipsum 7",
+      "datePublished": "2025-02-07",
+      "audience": "Lorem ipsum teams",
+      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
+      "actionRequired": "Lorem ipsum dolor sit amet.",
+      "notes": "Lorem ipsum dolor sit amet.",
+      "resources": "https://example.com/resources7",
+      "whoToContact": "https://example.com/support",
+      "shareableLink": "?entry=2025-02-07"
     },
     "2025-02-08": {
-        "title": "Lorem ipsum dolor sit amet 8",
-        "category": "Lorem ipsum 8",
-        "datePublished": "2025-02-08",
-        "audience": "Lorem ipsum teams",
-        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-        "actionRequired": "Lorem ipsum dolor sit amet.",
-        "notes": "Lorem ipsum dolor sit amet.",
-        "resources": "https://example.com/resources8",
-        "whoToContact": "https://example.com/support",
-        "shareableLink": "?entry=2025-02-08"
+      "title": "Lorem ipsum dolor sit amet 8",
+      "category": "Lorem ipsum 8",
+      "datePublished": "2025-02-08",
+      "audience": "Lorem ipsum teams",
+      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
+      "actionRequired": "Lorem ipsum dolor sit amet.",
+      "notes": "Lorem ipsum dolor sit amet.",
+      "resources": "https://example.com/resources8",
+      "whoToContact": "https://example.com/support",
+      "shareableLink": "?entry=2025-02-08"
     },
     "2025-02-09-1": {
-        "title": "Lorem ipsum dolor sit amet 9 1",
-        "category": "Lorem ipsum 9 1",
-        "datePublished": "2025-02-09",
-        "audience": "Lorem ipsum teams",
-        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-        "actionRequired": "Lorem ipsum dolor sit amet.",
-        "notes": "Lorem ipsum dolor sit amet.",
-        "resources": "https://example.com/resources9",
-        "whoToContact": "https://example.com/support",
-        "shareableLink": "?entry=2025-02-09-1"
+      "title": "Lorem ipsum dolor sit amet 9 1",
+      "category": "Lorem ipsum 9 1",
+      "datePublished": "2025-02-09",
+      "audience": "Lorem ipsum teams",
+      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
+      "actionRequired": "Lorem ipsum dolor sit amet.",
+      "notes": "Lorem ipsum dolor sit amet.",
+      "resources": "https://example.com/resources9",
+      "whoToContact": "https://example.com/support",
+      "shareableLink": "?entry=2025-02-09-1"
     },
     "2025-02-09-2": {
-        "title": "Lorem ipsum dolor sit amet 9 2",
-        "category": "Lorem ipsum 9 2",
-        "datePublished": "2025-02-09",
-        "audience": "Lorem ipsum teams",
-        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-        "actionRequired": "Lorem ipsum dolor sit amet.",
-        "notes": "Lorem ipsum dolor sit amet.",
-        "resources": "https://example.com/resources9",
-        "whoToContact": "https://example.com/support",
-        "shareableLink": "?entry=2025-02-09-2"
+      "title": "Lorem ipsum dolor sit amet 9 2",
+      "category": "Lorem ipsum 9 2",
+      "datePublished": "2025-02-09",
+      "audience": "Lorem ipsum teams",
+      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
+      "actionRequired": "Lorem ipsum dolor sit amet.",
+      "notes": "Lorem ipsum dolor sit amet.",
+      "resources": "https://example.com/resources9",
+      "whoToContact": "https://example.com/support",
+      "shareableLink": "?entry=2025-02-09-2"
     },
     "2025-02-10": {
-        "title": "Lorem ipsum dolor sit amet 10",
-        "category": "Lorem ipsum 10",
-        "datePublished": "2025-02-10",
-        "audience": "Lorem ipsum teams",
-        "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
-        "actionRequired": "Lorem ipsum dolor sit amet.",
-        "notes": "Lorem ipsum dolor sit amet.",
-        "resources": "https://example.com/resources10",
-        "whoToContact": "https://example.com/support",
-        "shareableLink": "?entry=2025-02-10"
+      "title": "Lorem ipsum dolor sit amet 10",
+      "category": "Lorem ipsum 10",
+      "datePublished": "2025-02-10",
+      "audience": "Lorem ipsum teams",
+      "whatYouNeedToKnow": "Lorem ipsum dolor sit amet.",
+      "actionRequired": "Lorem ipsum dolor sit amet.",
+      "notes": "Lorem ipsum dolor sit amet.",
+      "resources": "https://example.com/resources10",
+      "whoToContact": "https://example.com/support",
+      "shareableLink": "?entry=2025-02-10"
     }
-}
+  }
