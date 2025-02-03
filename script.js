@@ -1,7 +1,6 @@
 $(document).ready(function() {
     var jsonData = {}; 
 
-    // Load JSON data
     $.getJSON("tech-comm.json")
         .done(function(data) {
             jsonData = data;
@@ -12,21 +11,13 @@ $(document).ready(function() {
                 $categorySelect.append(`<option value="${key}">${value.title} (${value.datePublished})</option>`);
             });
 
-            // Initialize Select2 on the category dropdown
             $categorySelect.select2({
                 placeholder: "Select a category",
                 allowClear: true
             });
 
-            // Create a list of available dates
-            var availableDates = [];
-            $.each(jsonData, function(key, value) {
-                if (value.datePublished && !availableDates.includes(value.datePublished)) {
-                    availableDates.push(value.datePublished);
-                }
-            });
+            var availableDates = Object.keys(jsonData).map(key => key.split('-').slice(0, 3).join('-'));
 
-            // Initialize the DatePicker with year selection
             $("#datePicker").datepicker({
                 dateFormat: 'yy-mm-dd',
                 changeMonth: true,
@@ -37,30 +28,11 @@ $(document).ready(function() {
                     return [availableDates.includes(dateString), ''];
                 },
                 onSelect: function(dateText) {
-                    // Handle date selection
-                    var selectedDate = dateText;
                     var resultHtml = '';
 
-                    // Loop through all entries with the selected date
                     $.each(jsonData, function(key, value) {
-                        if (value.datePublished === selectedDate) {
-                            resultHtml += `
-                                <h2 property="name" id="wb-cont">${value.title}</h2>
-                                <h3 class="mrgn-tp-0">${value.category} - ${formatDate(value.datePublished)}</h3>
-                                <div class="clearfix"></div>
-                                <table class="table table-bordered table-striped">
-                                    <tbody>
-                                        <tr><th>Audience</th><td>${value.audience || ''}</td></tr>
-                                        <tr><th>What You Need to Know</th><td>${value.whatYouNeedToKnow || ''}</td></tr>
-                                        <tr><th>Action Required</th><td>${value.actionRequired || ''}</td></tr>
-                                        <tr><th>Notes</th><td>${value.notes || ''}</td></tr>
-                                        <tr><th>Resources</th><td>${value.resources ? `<a href="${value.resources}">${value.resources}</a>` : ''}</td></tr>
-                                        <tr><th>Who to Contact</th><td>${value.whoToContact ? `<a href="${value.whoToContact}">${value.whoToContact}</a>` : ''}</td></tr>
-                                        <tr><th>Shareable Link</th><td>${value.shareableLink ? `<a href="${value.shareableLink}">Share this link</a>` : ''}</td></tr>
-                                    </tbody>
-                                </table>
-                                <hr>
-                            `;
+                        if (key.startsWith(dateText)) {
+                            resultHtml += generateResultHtml(value);
                         }
                     });
 
@@ -72,41 +44,19 @@ $(document).ready(function() {
                 }
             });
 
-            // Open date picker when calendar icon is clicked
             $("#calendarIcon").on("click", function() {
                 $("#datePicker").datepicker("show");
             });
 
-            // Function to load specific entry from the URL
             function loadEntryFromURL() {
                 var entryID = new URLSearchParams(window.location.search).get('entry');
                 
-                if (entryID) {
-                    if (jsonData[entryID]) {
-                        var value = jsonData[entryID];
-                        var resultHtml = `
-                            <h2 property="name" id="wb-cont">${value.title}</h2>
-                            <h3 class="mrgn-tp-0">${value.category} - ${formatDate(value.datePublished)}</h3>
-                            <div class="clearfix"></div>
-                            <table class="table table-bordered table-striped">
-                                <tbody>
-                                    <tr><th>Audience</th><td>${value.audience || ''}</td></tr>
-                                    <tr><th>What You Need to Know</th><td>${value.whatYouNeedToKnow || ''}</td></tr>
-                                    <tr><th>Action Required</th><td>${value.actionRequired || ''}</td></tr>
-                                    <tr><th>Notes</th><td>${value.notes || ''}</td></tr>
-                                    <tr><th>Resources</th><td>${value.resources ? `<a href="${value.resources}">${value.resources}</a>` : ''}</td></tr>
-                                    <tr><th>Who to Contact</th><td>${value.whoToContact ? `<a href="${value.whoToContact}">${value.whoToContact}</a>` : ''}</td></tr>
-                                    <tr><th>Shareable Link</th><td>${value.shareableLink ? `<a href="${value.shareableLink}">Share this link</a>` : ''}</td></tr>
-                                </tbody>
-                            </table>
-                        `;
-
-                        $("#result").html(resultHtml);
-                    } else {
-                        $("#result").html("<h2 class='text-danger text-center'>No Data Available for the selected entry.</h2>");
-                    }
+                if (entryID && jsonData[entryID]) {
+                    var value = jsonData[entryID];
+                    var resultHtml = generateResultHtml(value);
+                    $("#result").html(resultHtml);
                 } else {
-                    $("#result").html("<h2 class='text-danger text-center'>No valid entry ID provided.</h2>");
+                    $("#result").html("<h2 class='text-danger text-center'>No Data Available for the selected entry.</h2>");
                 }
             }
 
@@ -117,7 +67,6 @@ $(document).ready(function() {
             $("#result").html("<h2 class='text-danger text-center'>Failed to load the data file.</h2>");
         });
 
-    // Fetch data when category dropdown is changed
     $("#fetchData").click(function() {
         var selectedCategory = $("#category").val();
         $("#result").html("<h2 class='text-center text-primary'>Loading...</h2>");
@@ -125,23 +74,7 @@ $(document).ready(function() {
         setTimeout(() => {
             if (jsonData[selectedCategory]) {
                 var data = jsonData[selectedCategory];
-                var resultHtml = `
-                    <h2 property="name" id="wb-cont">${data.title}</h2>
-                    <h3 class="mrgn-tp-0">${data.category} - ${formatDate(data.datePublished)}</h3>
-                    <div class="clearfix"></div>
-                    <table class="table table-bordered table-striped">
-                        <tbody>
-                            <tr><th>Audience</th><td>${data.audience || ''}</td></tr>
-                            <tr><th>What You Need to Know</th><td>${data.whatYouNeedToKnow || ''}</td></tr>
-                            <tr><th>Action Required</th><td>${data.actionRequired || ''}</td></tr>
-                            <tr><th>Notes</th><td>${data.notes || ''}</td></tr>
-                            <tr><th>Resources</th><td>${data.resources ? `<a href="${data.resources}">${data.resources}</a>` : ''}</td></tr>
-                            <tr><th>Who to Contact</th><td>${data.whoToContact ? `<a href="${data.whoToContact}">${data.whoToContact}</a>` : ''}</td></tr>
-                            <tr><th>Shareable Link</th><td>${data.shareableLink ? `<a href="${data.shareableLink}">Share this link</a>` : ''}</td></tr>
-                        </tbody>
-                    </table>
-                `;
-
+                var resultHtml = generateResultHtml(data);
                 $("#result").html(resultHtml);
             } else {
                 $("#result").html("<h2 class='text-danger text-center'>No Data Available for the selected category.</h2>");
@@ -149,9 +82,88 @@ $(document).ready(function() {
         }, 500);
     });
 
-    // Helper function to format date
     function formatDate(dateString) {
         var date = new Date(dateString);
         return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    function generateResultHtml(value) {
+        let resultHtml = `
+            <h2 property="name" id="wb-cont">${value.title}</h2>
+            <h3 class="mrgn-tp-0">${value.category} - ${formatDate(value.datePublished)}</h3>
+            <div class="clearfix"></div>
+            <table class="table table-bordered table-striped">
+                <tbody>
+        `;
+    
+        if (value.audience) {
+            resultHtml += `<tr><th>Audience</th><td>${Array.isArray(value.audience) ? value.audience.join('<br>') : value.audience}</td></tr>`;
+        }
+        if (value.whatYouNeedToKnow) {
+            const whatYouNeedToKnowContent = value.whatYouNeedToKnow.map(item => 
+                typeof item === 'string' 
+                    ? `<p>${item}</p>` 
+                    : item.details 
+                        ? `<ul>${item.details.map(detail => `<li>${detail}</li>`).join('')}</ul>` 
+                        : ''
+            ).join('');
+            resultHtml += `<tr><th>What You Need to Know</th><td>${whatYouNeedToKnowContent}</td></tr>`;
+        }
+        if (value.actionRequired) {
+            const actionRequiredContent = value.actionRequired.map(item => 
+                typeof item === 'string' 
+                    ? `<p>${item}</p>` 
+                    : item.details 
+                        ? `<ul>${item.details.map(detail => `<li>${detail}</li>`).join('')}</ul>` 
+                        : ''
+            ).join('');
+            resultHtml += `<tr><th>Action Required</th><td>${actionRequiredContent}</td></tr>`;
+        }
+        if (value.notes) {
+            const notesContent = value.notes.map(item => 
+                typeof item === 'string' 
+                    ? `<p>${item}</p>` 
+                    : item.details 
+                        ? `<ul>${item.details.map(detail => `<li>${detail}</li>`).join('')}</ul>` 
+                        : ''
+            ).join('');
+            resultHtml += `<tr><th>Notes</th><td>${notesContent}</td></tr>`;
+        }
+        if (value.resources) {
+            const resourcesContent = value.resources.map(item => 
+                item.href 
+                    ? `<a href="${item.href}">${item.title || item.href}</a>` 
+                    : item.details 
+                        ? item.details.map(detail => `<a href="${detail.href}">${detail.title || detail.href}</a>`).join('<br>') 
+                        : ''
+            ).join('<br>');
+            resultHtml += `<tr><th>Resources</th><td>${resourcesContent}</td></tr>`;
+        }
+        if (value.whoToContact) {
+            const whoToContactContent = value.whoToContact.map(item => 
+                item.href 
+                    ? `<a href="${item.href}">${item.title || item.href}</a>` 
+                    : item.details 
+                        ? item.details.map(detail => `<a href="${detail.href}">${detail.title || detail.href}</a>`).join('<br>') 
+                        : ''
+            ).join('<br>');
+            resultHtml += `<tr><th>Who to Contact</th><td>${whoToContactContent}</td></tr>`;
+        }
+        if (value.shareableLink && value.shareableLink.href) {
+            resultHtml += `<tr><th>Shareable Link</th><td><a href="${value.shareableLink.href}">${value.shareableLink.title || value.shareableLink.href}</a></td></tr>`;
+        }
+    
+        resultHtml += `
+                </tbody>
+            </table>
+        `;
+    
+        return resultHtml;
+    }
+    
+    // Helper function to format date
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        return isNaN(date) ? "Invalid Date" : date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
     }
 });
