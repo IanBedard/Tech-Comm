@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech-Comm Updates</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body class="bg-light">
+
+    <div class="container mt-4">
+        <h1 class="mb-4 text-center">Tech-Comm Updates</h1>
+
+        <div class="card shadow">
+            <div class="card-body">
+                <label for="category" class="form-label">Choose a Tech-Comm Category:</label>
+                <div class="input-group">
+                    <select id="category" class="form-select"></select>
+                    <button id="fetchData" class="btn btn-primary">Load Content</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow mt-4">
+            <div class="card-body">
+                <label for="datePicker" class="form-label">Choose a Date:</label>
+                <div class="input-group">
+                    <input type="text" id="datePicker" class="form-control" placeholder="Select a date">
+                </div>
+            </div>
+        </div>
+
+        <div id="result" class="mt-4 p-4 bg-white shadow rounded">
+            <h2 class="text-muted text-center">Content will appear here...</h2>
+        </div>
+
+        <!-- Displaying the JSON structure for reference -->
+        <div class="card shadow mt-4">
+            <div class="card-body">
+                <h3>Example of JSON Data Structure:</h3>
+                <pre class="bg-dark text-white p-3 rounded">
+{
+    "2025-02-09-1": {
+        "title": "For action: Example 9 1",
+        "category": "Tech-Comm Example 9 1",
+        "datePublished": "2025-02-09",
+        "audience": "Customer Support Teams",
+        "whatYouNeedToKnow": "Upcoming changes in support protocols.",
+        "actionRequired": "Train on new protocols.",
+        "notes": "Training session on February 14.",
+        "resources": "https://example.com/resources9",
+        "whoToContact": "https://example.com/support"
+    },
+    "2025-02-09-2": {
+        "title": "For action: Example 9 2",
+        "category": "Tech-Comm Example 9 2",
+        "datePublished": "2025-02-09",
+        "audience": "Customer Support Teams",
+        "whatYouNeedToKnow": "Upcoming changes in support protocols.",
+        "actionRequired": "Train on new protocols.",
+        "notes": "Training session on February 14.",
+        "resources": "https://example.com/resources9",
+        "whoToContact": "https://example.com/support"
+    }
+}
+                </pre>
+                <div>
+                    <h3>How the Shareable Links Work:</h3>
+                    <p>In this system, each Tech-Comm update or action item has a unique identifier (like 2025-02-09-1). This identifier is included in the URL as a hash fragment (e.g., <a href="?entry=2025-02-09-1">index.html?entry=2025-02-09-1</a>). When a user clicks on a shareable link, such as <u>ndex.html?entry=2025-02-09-1</u>, the JavaScript on the page reads the identifier from the URL and uses it to find the corresponding data from the JSON file.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
