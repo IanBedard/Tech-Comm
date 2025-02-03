@@ -37,15 +37,16 @@ $(document).ready(function() {
                     return [availableDates.includes(dateString), ''];
                 },
                 onSelect: function(dateText) {
+                    // Handle date selection
                     var selectedDate = dateText;
                     var resultHtml = '';
-                
+
+                    // Loop through all entries with the selected date
                     $.each(jsonData, function(key, value) {
                         if (value.datePublished === selectedDate) {
                             resultHtml += `
                                 <h2 property="name" id="wb-cont">${value.title}</h2>
-                                <h3 class="mrgn-tp-0">${value.category}</h3>
-                                <h3>${value.datePublished}</h3>
+                                <h3 class="mrgn-tp-0">${value.category} - ${formatDate(value.datePublished)}</h3>
                                 <div class="clearfix"></div>
                                 <table class="table table-bordered table-striped">
                                     <tbody>
@@ -62,11 +63,11 @@ $(document).ready(function() {
                             `;
                         }
                     });
-                
+
                     if (resultHtml === '') {
                         resultHtml = "<h2 class='text-danger text-center'>No Data Available for the selected date.</h2>";
                     }
-                
+
                     $("#result").html(resultHtml);
                 }
             });
@@ -85,8 +86,7 @@ $(document).ready(function() {
                         var value = jsonData[entryID];
                         var resultHtml = `
                             <h2 property="name" id="wb-cont">${value.title}</h2>
-                            <h3 class="mrgn-tp-0">${value.category}</h3>
-                            <h3>${value.datePublished}</h3>
+                            <h3 class="mrgn-tp-0">${value.category} - ${formatDate(value.datePublished)}</h3>
                             <div class="clearfix"></div>
                             <table class="table table-bordered table-striped">
                                 <tbody>
@@ -100,7 +100,7 @@ $(document).ready(function() {
                                 </tbody>
                             </table>
                         `;
-            
+
                         $("#result").html(resultHtml);
                     } else {
                         $("#result").html("<h2 class='text-danger text-center'>No Data Available for the selected entry.</h2>");
@@ -108,7 +108,6 @@ $(document).ready(function() {
                 } else {
                     $("#result").html("<h2 class='text-danger text-center'>No valid entry ID provided.</h2>");
                 }
-            
             }
 
             loadEntryFromURL();
@@ -128,8 +127,7 @@ $(document).ready(function() {
                 var data = jsonData[selectedCategory];
                 var resultHtml = `
                     <h2 property="name" id="wb-cont">${data.title}</h2>
-                    <h3 class="mrgn-tp-0">${data.category}</h3>
-                    <h3>${data.datePublished}</h3>
+                    <h3 class="mrgn-tp-0">${data.category} - ${formatDate(data.datePublished)}</h3>
                     <div class="clearfix"></div>
                     <table class="table table-bordered table-striped">
                         <tbody>
@@ -143,11 +141,17 @@ $(document).ready(function() {
                         </tbody>
                     </table>
                 `;
-        
+
                 $("#result").html(resultHtml);
             } else {
                 $("#result").html("<h2 class='text-danger text-center'>No Data Available for the selected category.</h2>");
             }
         }, 500);
     });
+
+    // Helper function to format date
+    function formatDate(dateString) {
+        var date = new Date(dateString);
+        return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
 });
