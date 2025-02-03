@@ -31,60 +31,47 @@ $(document).ready(function() {
                 dateFormat: 'yy-mm-dd',
                 changeMonth: true,
                 changeYear: true,
-                yearRange: "2000:2030", // Adjust the range as needed
+                yearRange: "2000:2030",
                 beforeShowDay: function(date) {
                     var dateString = $.datepicker.formatDate('yy-mm-dd', date);
                     return [availableDates.includes(dateString), ''];
-                }
-            });
-
-            // Handle the selection of a date
-            $("#datePicker").change(function() {
-                var selectedDate = $(this).val();
-                if (selectedDate) {
+                },
+                onSelect: function(dateText) {
+                    var selectedDate = dateText;
                     var resultHtml = '';
-
-                    // Loop through all entries with the selected date
+                
                     $.each(jsonData, function(key, value) {
                         if (value.datePublished === selectedDate) {
                             resultHtml += `
-                                <div class="result-entry">
-                                    <h2 class="text-primary">${value.title}</h2>
-                                    <p><strong>Category:</strong> ${value.category}</p>
-                                    <p><strong>Date Published:</strong> ${value.datePublished}</p>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr><th>Title</th><td>${value.title}</td></tr>
+                                        <tr><th>Category</th><td>${value.category}</td></tr>
+                                        <tr><th>Date Published</th><td>${value.datePublished}</td></tr>
+                                        <tr><th>Audience</th><td>${value.audience || ''}</td></tr>
+                                        <tr><th>What You Need to Know</th><td>${value.whatYouNeedToKnow || ''}</td></tr>
+                                        <tr><th>Action Required</th><td>${value.actionRequired || ''}</td></tr>
+                                        <tr><th>Notes</th><td>${value.notes || ''}</td></tr>
+                                        <tr><th>Resources</th><td>${value.resources ? `<a href="${value.resources}">${value.resources}</a>` : ''}</td></tr>
+                                        <tr><th>Who to Contact</th><td>${value.whoToContact ? `<a href="${value.whoToContact}">${value.whoToContact}</a>` : ''}</td></tr>
+                                        <tr><th>Shareable Link</th><td>${value.shareableLink ? `<a href="${value.shareableLink}">Share this link</a>` : ''}</td></tr>
+                                    </tbody>
+                                </table><hr>
                             `;
-
-                            if (value.audience) {
-                                resultHtml += `<p><strong>Audience:</strong> ${value.audience}</p>`;
-                            }
-                            if (value.whatYouNeedToKnow) {
-                                resultHtml += `<p><strong>What You Need to Know:</strong> ${value.whatYouNeedToKnow}</p>`;
-                            }
-                            if (value.actionRequired) {
-                                resultHtml += `<p><strong>Action Required:</strong> ${value.actionRequired}</p>`;
-                            }
-                            if (value.notes) {
-                                resultHtml += `<p><strong>Notes:</strong> ${value.notes}</p>`;
-                            }
-                            if (value.resources) {
-                                resultHtml += `<p><strong>Resources:</strong> <a href="${value.resources}">${value.resources}</a></p>`;
-                            }
-                            if (value.whoToContact) {
-                                resultHtml += `<p><strong>Who to Contact:</strong> <a href="${value.whoToContact}">${value.whoToContact}</a></p>`;
-                            }
-                            if (value.shareableLink) {
-                                resultHtml += `<p><strong>Shareable Link:</strong> <a href="${value.shareableLink}">Share this link</a></p>`;
-                            }
-                            resultHtml += `</div><hr>`;
                         }
                     });
-
+                
                     if (resultHtml === '') {
                         resultHtml = "<h2 class='text-danger text-center'>No Data Available for the selected date.</h2>";
                     }
-
+                
                     $("#result").html(resultHtml);
                 }
+            });
+
+            // Open date picker when calendar icon is clicked
+            $("#calendarIcon").on("click", function() {
+                $("#datePicker").datepicker("show");
             });
 
             // Function to load specific entry from the URL
@@ -95,35 +82,22 @@ $(document).ready(function() {
                     if (jsonData[entryID]) {
                         var value = jsonData[entryID];
                         var resultHtml = `
-                            <div class="result-entry">
-                                <h2 class="text-primary">${value.title}</h2>
-                                <p><strong>Category:</strong> ${value.category}</p>
-                                <p><strong>Date Published:</strong> ${value.datePublished}</p>
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr><th>Title</th><td>${value.title}</td></tr>
+                                    <tr><th>Category</th><td>${value.category}</td></tr>
+                                    <tr><th>Date Published</th><td>${value.datePublished}</td></tr>
+                                    <tr><th>Audience</th><td>${value.audience || ''}</td></tr>
+                                    <tr><th>What You Need to Know</th><td>${value.whatYouNeedToKnow || ''}</td></tr>
+                                    <tr><th>Action Required</th><td>${value.actionRequired || ''}</td></tr>
+                                    <tr><th>Notes</th><td>${value.notes || ''}</td></tr>
+                                    <tr><th>Resources</th><td>${value.resources ? `<a href="${value.resources}">${value.resources}</a>` : ''}</td></tr>
+                                    <tr><th>Who to Contact</th><td>${value.whoToContact ? `<a href="${value.whoToContact}">${value.whoToContact}</a>` : ''}</td></tr>
+                                    <tr><th>Shareable Link</th><td>${value.shareableLink ? `<a href="${value.shareableLink}">Share this link</a>` : ''}</td></tr>
+                                </tbody>
+                            </table>
                         `;
-
-                        if (value.audience) {
-                            resultHtml += `<p><strong>Audience:</strong> ${value.audience}</p>`;
-                        }
-                        if (value.whatYouNeedToKnow) {
-                            resultHtml += `<p><strong>What You Need to Know:</strong> ${value.whatYouNeedToKnow}</p>`;
-                        }
-                        if (value.actionRequired) {
-                            resultHtml += `<p><strong>Action Required:</strong> ${value.actionRequired}</p>`;
-                        }
-                        if (value.notes) {
-                            resultHtml += `<p><strong>Notes:</strong> ${value.notes}</p>`;
-                        }
-                        if (value.resources) {
-                            resultHtml += `<p><strong>Resources:</strong> <a href="${value.resources}">${value.resources}</a></p>`;
-                        }
-                        if (value.whoToContact) {
-                            resultHtml += `<p><strong>Who to Contact:</strong> <a href="${value.whoToContact}">${value.whoToContact}</a></p>`;
-                        }
-                        if (value.shareableLink) {
-                            resultHtml += `<p><strong>Shareable Link:</strong> <a href="${value.shareableLink}">Share this link</a></p>`;
-                        }
-                        resultHtml += `</div>`;
-
+            
                         $("#result").html(resultHtml);
                     } else {
                         $("#result").html("<h2 class='text-danger text-center'>No Data Available for the selected entry.</h2>");
@@ -149,33 +123,22 @@ $(document).ready(function() {
             if (jsonData[selectedCategory]) {
                 var data = jsonData[selectedCategory];
                 var resultHtml = `
-                    <h2 class="text-primary">${data.title}</h2>
-                    <p><strong>Category:</strong> ${data.category}</p>
-                    <p><strong>Date Published:</strong> ${data.datePublished}</p>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr><th>Title</th><td>${data.title}</td></tr>
+                            <tr><th>Category</th><td>${data.category}</td></tr>
+                            <tr><th>Date Published</th><td>${data.datePublished}</td></tr>
+                            <tr><th>Audience</th><td>${data.audience || ''}</td></tr>
+                            <tr><th>What You Need to Know</th><td>${data.whatYouNeedToKnow || ''}</td></tr>
+                            <tr><th>Action Required</th><td>${data.actionRequired || ''}</td></tr>
+                            <tr><th>Notes</th><td>${data.notes || ''}</td></tr>
+                            <tr><th>Resources</th><td>${data.resources ? `<a href="${data.resources}">${data.resources}</a>` : ''}</td></tr>
+                            <tr><th>Who to Contact</th><td>${data.whoToContact ? `<a href="${data.whoToContact}">${data.whoToContact}</a>` : ''}</td></tr>
+                            <tr><th>Shareable Link</th><td>${data.shareableLink ? `<a href="${data.shareableLink}">Share this link</a>` : ''}</td></tr>
+                        </tbody>
+                    </table>
                 `;
-
-                if (data.audience) {
-                    resultHtml += `<p><strong>Audience:</strong> ${data.audience}</p>`;
-                }
-                if (data.whatYouNeedToKnow) {
-                    resultHtml += `<p><strong>What You Need to Know:</strong> ${data.whatYouNeedToKnow}</p>`;
-                }
-                if (data.actionRequired) {
-                    resultHtml += `<p><strong>Action Required:</strong> ${data.actionRequired}</p>`;
-                }
-                if (data.notes) {
-                    resultHtml += `<p><strong>Notes:</strong> ${data.notes}</p>`;
-                }
-                if (data.resources) {
-                    resultHtml += `<p><strong>Resources:</strong> <a href="${data.resources}">${data.resources}</a></p>`;
-                }
-                if (data.whoToContact) {
-                    resultHtml += `<p><strong>Who to Contact:</strong> <a href="${data.whoToContact}">${data.whoToContact}</a></p>`;
-                }
-                if (data.shareableLink) {
-                    resultHtml += `<p><strong>Shareable Link:</strong> <a href="${data.shareableLink}">Share this link</a></p>`;
-                }
-
+        
                 $("#result").html(resultHtml);
             } else {
                 $("#result").html("<h2 class='text-danger text-center'>No Data Available for the selected category.</h2>");
