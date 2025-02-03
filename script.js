@@ -43,11 +43,12 @@ $(document).ready(function() {
                     $.each(jsonData, function(key, value) {
                         if (value.datePublished === selectedDate) {
                             resultHtml += `
-                                <table class="table table-bordered">
+                                <h2 property="name" id="wb-cont">${value.title}</h2>
+                                <h3 class="mrgn-tp-0">${value.category}</h3>
+                                <h3>${value.datePublished}</h3>
+                                <div class="clearfix"></div>
+                                <table class="table table-bordered table-striped">
                                     <tbody>
-                                        <tr><th>Title</th><td>${value.title}</td></tr>
-                                        <tr><th>Category</th><td>${value.category}</td></tr>
-                                        <tr><th>Date Published</th><td>${value.datePublished}</td></tr>
                                         <tr><th>Audience</th><td>${value.audience || ''}</td></tr>
                                         <tr><th>What You Need to Know</th><td>${value.whatYouNeedToKnow || ''}</td></tr>
                                         <tr><th>Action Required</th><td>${value.actionRequired || ''}</td></tr>
@@ -56,7 +57,8 @@ $(document).ready(function() {
                                         <tr><th>Who to Contact</th><td>${value.whoToContact ? `<a href="${value.whoToContact}">${value.whoToContact}</a>` : ''}</td></tr>
                                         <tr><th>Shareable Link</th><td>${value.shareableLink ? `<a href="${value.shareableLink}">Share this link</a>` : ''}</td></tr>
                                     </tbody>
-                                </table><hr>
+                                </table>
+                                <hr>
                             `;
                         }
                     });
@@ -82,11 +84,12 @@ $(document).ready(function() {
                     if (jsonData[entryID]) {
                         var value = jsonData[entryID];
                         var resultHtml = `
-                            <table class="table table-bordered">
+                            <h2 property="name" id="wb-cont">${value.title}</h2>
+                            <h3 class="mrgn-tp-0">${value.category}</h3>
+                            <h3>${value.datePublished}</h3>
+                            <div class="clearfix"></div>
+                            <table class="table table-bordered table-striped">
                                 <tbody>
-                                    <tr><th>Title</th><td>${value.title}</td></tr>
-                                    <tr><th>Category</th><td>${value.category}</td></tr>
-                                    <tr><th>Date Published</th><td>${value.datePublished}</td></tr>
                                     <tr><th>Audience</th><td>${value.audience || ''}</td></tr>
                                     <tr><th>What You Need to Know</th><td>${value.whatYouNeedToKnow || ''}</td></tr>
                                     <tr><th>Action Required</th><td>${value.actionRequired || ''}</td></tr>
@@ -105,6 +108,7 @@ $(document).ready(function() {
                 } else {
                     $("#result").html("<h2 class='text-danger text-center'>No valid entry ID provided.</h2>");
                 }
+            
             }
 
             loadEntryFromURL();
@@ -123,11 +127,12 @@ $(document).ready(function() {
             if (jsonData[selectedCategory]) {
                 var data = jsonData[selectedCategory];
                 var resultHtml = `
-                    <table class="table table-bordered">
+                    <h2 property="name" id="wb-cont">${data.title}</h2>
+                    <h3 class="mrgn-tp-0">${data.category}</h3>
+                    <h3>${data.datePublished}</h3>
+                    <div class="clearfix"></div>
+                    <table class="table table-bordered table-striped">
                         <tbody>
-                            <tr><th>Title</th><td>${data.title}</td></tr>
-                            <tr><th>Category</th><td>${data.category}</td></tr>
-                            <tr><th>Date Published</th><td>${data.datePublished}</td></tr>
                             <tr><th>Audience</th><td>${data.audience || ''}</td></tr>
                             <tr><th>What You Need to Know</th><td>${data.whatYouNeedToKnow || ''}</td></tr>
                             <tr><th>Action Required</th><td>${data.actionRequired || ''}</td></tr>
